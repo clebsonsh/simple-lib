@@ -1,1 +1,3 @@
-# Código das aulas do primeiro módulo do curso de [TTD do Fábio Vedovelli](https://javascript.tv.br/)
+# Aprenda a testar Aplicações Javascript
+
+Código das aulas do primeiro módulo do curso de [TTD do Fábio Vedovelli](https://javascript.tv.br/)
