@@ -42,5 +42,18 @@ export default class Cart {
       }, Money({ amount: 0 }))
       .getAmount()
   }
+
+  summary() {
+    return {
+      total: this.getTotal(),
+      items: this.items,
+    }
+  }
+
+  checkout() {
+    const { total, items } = this.summary()
+    this.items = []
+
+    return { total, items }
   }
 }
