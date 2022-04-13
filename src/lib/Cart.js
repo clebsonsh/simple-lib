@@ -16,8 +16,14 @@ const calculatePercentageDiscount = (amount, item) => {
 }
 
 const calculateQuantityDiscount = (amount, item) => {
+  const isEven = item.quantity % 2 === 0
+
   if (item.quantity > item.condition.quantity) {
-    return amount.percentage(50)
+    if (isEven) {
+      return amount.percentage(50)
+    }
+
+    return amount.subtract(Money({ amount: item.product.price })).percentage(50)
   }
   return Money({ amount: 0 })
 }
