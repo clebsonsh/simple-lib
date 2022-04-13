@@ -179,5 +179,24 @@ describe('Cart', () => {
 
       expect(cart.getTotal()).toEqual(141552)
     })
+
+    it('should receive two or more conditions and apply the best discount. First case. ', () => {
+      const condition1 = {
+        quantity: 2,
+      }
+
+      const condition2 = {
+        percentage: 30,
+        minimum: 2,
+      }
+
+      cart.add({
+        product,
+        condition: [condition1, condition2],
+        quantity: 9,
+      })
+
+      expect(cart.getTotal()).toEqual(176940)
+    })
   })
 })
